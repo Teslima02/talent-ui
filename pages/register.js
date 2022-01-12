@@ -2,6 +2,9 @@ import { MdEmail, MdLock } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 
+import { gql } from "@apollo/client";
+import client from "../apollo-client";
+
 export default function Register() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,3 +80,21 @@ export default function Register() {
     </div>
   );
 }
+
+// export async function getStaticProps() {
+//   const { data } = await client.query({
+//     query: gql`
+//       query Login {
+//         email: "test5@gmail.com"
+//         password: "Password@123"
+//       }
+//     `,
+//   });
+
+//   console.log(data);
+//   return {
+//     props: {
+//       countries: data.countries.slice(0, 4),
+//     },
+//  };
+// }

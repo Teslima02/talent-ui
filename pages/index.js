@@ -1,6 +1,8 @@
 import { MdEmail, MdLock } from "react-icons/md";
+import { FcGoogle } from "react-icons/fc";
+import Link from "next/link";
 
-export default function Home() {
+export default function Register() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="max-w-xl mx-auto">
@@ -44,14 +46,30 @@ export default function Home() {
                 type="button"
                 className="w-full justify-center inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-500 hover:bg-indigo-700 focus:ring-indigo-500"
               >
-                Start coding now 
+                Start coding now
               </button>
             </div>
-            <div>
+            <div className="mt-8 text-center text-gray-500">
               <p>or continue with these social profile</p>
             </div>
-            <div>
-              
+            <div className="mt-4 flex flex-row">
+              <div className="ml-24">
+                <FcGoogle className=" text-gray-400" aria-hidden="true" />
+              </div>
+              <div className="ml-8">
+                <FcGoogle className=" text-gray-400" aria-hidden="true" />
+              </div>
+              <div className="ml-8">
+                <FcGoogle className=" text-gray-400" aria-hidden="true" />
+              </div>
+              <div className="ml-8">
+                <FcGoogle className=" text-gray-400" aria-hidden="true" />
+              </div>
+            </div>
+            <div className="mt-8 text-center text-gray-500">
+              <p>
+                Already a member? <span className="text-blue-300"><Link href="/login">Login</Link></span>
+              </p>
             </div>
           </div>
         </div>
