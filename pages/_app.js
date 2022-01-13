@@ -1,7 +1,29 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache,
+  HttpLink,
+} from "@apollo/client";
+
+function createApolloClient() {
+  const link = new HttpLink({
+    uri: "http://localhost:4001/graphql",
+  });
+
+  return new ApolloClient({
+    link,
+    cache: new InMemoryCache(),
+  });
 }
 
-export default MyApp
+function MyApp({ Component, pageProps }) {
+  return (
+    <ApolloProvider client={createApolloClient()}>
+      <Component {...pageProps} />
+    </ApolloProvider>
+  );
+}
+
+export default MyApp;
